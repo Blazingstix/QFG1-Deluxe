@@ -1,0 +1,681 @@
+/*************************************************************************
+ * SCI Game Header
+ *************************************************************************
+ * Put all the defines specific to your game in here
+ *************************************************************************/
+(include "system.sh") 
+// e.g.
+// (define MAIN_SCRIPT			  0)
+// (define MENU_ABOUT			$101)
+(define MAZEBUG		238)
+(define CHARSAVE	601)
+
+
+/////////////////////////////////////////////////////////
+//General Game Defines
+/////////////////////////////////////////////////////////
+(define NUMSTATS	25)
+
+
+/////////////////////////////////////////////////////////
+//Picture defines
+/////////////////////////////////////////////////////////
+(define pBlueSkyForCarpet 750)
+
+/////////////////////////////////////////////////////////
+//Priority States
+/////////////////////////////////////////////////////////
+	(define LowPri	4)
+	(define HighPri	7)
+
+/////////////////////////////////////////////////////////
+//Character Classes
+/////////////////////////////////////////////////////////
+	(define CLASS_FIGHTER 	0)
+	(define CLASS_MAGICUSER 1)
+	(define CLASS_WIZARD 	1) //for consistent naming throughout the series
+	(define CLASS_THIEF 	2)
+	(define CLASS_PALADIN 	3) //for consistent naming throughout the series
+
+/////////////////////////////////////////////////////////
+//Ego Moving Modes
+/////////////////////////////////////////////////////////
+	(define MOVE_NOCHANGE 	-1)
+	(define MOVE_WALK 		0)
+	(define MOVE_RUN 		1)
+	(define MOVE_SNEAK 		2)
+
+/////////////////////////////////////////////////////////
+//Skills
+/////////////////////////////////////////////////////////
+	(define skSTRENGTH		0)
+	(define skINTELLIGENCE 	1)
+	(define skAGILITY		2)
+	(define skVITALITY 		3)
+	(define skLUCK 			4)
+	(define skWEAPONUSE 	5)
+	(define skPARRY 		6)
+	(define skDODGE 		7)
+	(define skSTEALTH 		8)
+	(define skLOCKPICKING 	9)
+	(define skTHROWING 		10)
+	(define skCLIMBING 		11)
+	(define skMAGIC 		12)
+	(define skEXPERIENCE 	13)
+	(define skHP 			14)
+	(define skSP 			15)
+	(define skMP 			16)
+
+//Magic Spells
+	(define skOPEN 			17)
+	(define skDETECTMAGIC 	18)
+	(define skTRIGGER 		19)
+	(define skDAZZLE 		20)
+	(define skZAP 			21)
+	(define skCALM 			22)
+	(define skFLAMEDART 	23)
+	(define skFETCH 		24)
+
+/////////////////////////////////////////////////////////
+//Inventory
+/////////////////////////////////////////////////////////
+	(define invSilver			1)
+	(define invGold 			2)
+	(define invRation			3)
+	(define invMandrakeRoot		4)
+	(define invKey 				5)
+	(define invBroadsword 		6)
+	(define invDagger 			7)
+	(define invLeatherArmor 	8)
+	(define invShield 			9)
+	(define invPaper 			10)
+	(define invApple 			11)
+	(define invVegetable 		12)
+	(define invGem 				13)
+	(define invVase 			14)
+	(define invCandelabra 		15)
+	(define invMusicBox 		16)
+	(define invCandlesticks 	17)
+	(define invPearlNecklace 	18)
+	(define invRing 			19)
+	(define invSpireaSeed 		20)
+	(define invRock 			21)
+	(define invFlower 			22)
+	(define invLockPick 		23)
+	(define invThiefToolKit 	24)
+	(define invThiefGuildLicense 25)
+	(define invEmptyFlask 		26)
+	(define invGreenFur 		27)
+	(define invFairyDust 		28)
+	(define invWater 			29)
+	(define invMushroom 		30)
+	(define invCheetaurClaw 	31)
+	(define invTrollBeard 		32)
+	(define invChainmailArmor 	33)
+	(define invHealingPotion 	34)
+	(define invManaPotion 		35)
+	(define invVigorPotion 		36)
+	(define invInventoryAA 		37)
+	(define invDispelPotion 	38)
+	(define invUndeadUnguent 	39)
+	(define invMirror 			40)
+	(define invAcorn 			41)
+
+/////////////////////////////////////////////////////////
+//Time Zones
+/////////////////////////////////////////////////////////
+	(define TIME_DAWN 			0)
+	(define TIME_MIDMORNING 	1)
+	(define TIME_MIDDAY 		2)
+	(define TIME_MIDAFTERNOON 	3)
+	(define TIME_SUNSET 		4)
+	(define TIME_NIGHT 			5)
+	(define TIME_MIDNIGHT 		6)
+	(define TIME_NOTYETDAWN 	7)
+
+/////////////////////////////////////////////////////////
+//Nest Condition
+/////////////////////////////////////////////////////////
+	(define	nestInTree 		0)
+	(define nestOnGround	1)
+	(define nestBurnt		2)
+
+/////////////////////////////////////////////////////////
+//Bar Drinks
+/////////////////////////////////////////////////////////
+	(define	drinkNOTHING 		0)
+	(define drinkALE			1)
+	(define drinkTROLLSWEAT		2)
+	(define drinkDRAGONBREATH	3)
+	
+/////////////////////////////////////////////////////////
+//Baba Yaga states
+/////////////////////////////////////////////////////////	
+	(define babaNAME	0)
+	(define babaBRAVE	1)
+	(define babaFETCH	2)
+	(define babaBRING	3)
+	(define babaFINALE	4)
+	
+/////////////////////////////////////////////////////////
+//Baba Yaga's Hut states
+/////////////////////////////////////////////////////////	
+	(define hutINITIAL		0)
+	(define hutMETSKULL	1)
+	(define hutNODEAL		2)
+	(define hutDEALMADE	3)
+	(define hutGAVEGEM		4)
+
+/////////////////////////////////////////////////////////
+//Inn Meal States
+/////////////////////////////////////////////////////////
+	(define	mealNOTHING 	0)
+	(define mealORDERED		1)
+	(define mealATTABLE		2)
+	(define mealFINISHED	3)
+
+/////////////////////////////////////////////////////////
+//Mages Maze
+/////////////////////////////////////////////////////////
+	(define ChaseRange 	30)
+	
+	//	Directions
+	(define mazeN	0)
+	(define mazeNE	1)
+	(define mazeE	2)
+	(define mazeSE	3)
+	(define mazeS	4)
+	(define mazeSW	5)
+	(define mazeW	6)
+	(define mazeNW	7)
+
+	//Bug Sizes
+	(define smallBug	0)
+	(define mediumBug 	1)
+	(define largeBug	2)
+
+	//doCommands
+	(define mmazeNOTHING	0)
+	(define mmazeCHOOSE 	1)
+	(define mmazeFETCH 		2)
+	(define mmazeOPEN 		3)
+	(define mmazeTRIGGER 	4)
+	(define mmazeFLAME 		5)
+
+/////////////////////////////////////////////////////////
+//Kobold States
+/////////////////////////////////////////////////////////
+	(define koboldASLEEP	0)
+	(define koboldAWAKE		1)
+	(define koboldStATE2	2)
+	(define koboldSTATE3	3)
+	(define koboldDEAD		4)
+	
+/////////////////////////////////////////////////////////
+//Event Flags
+/////////////////////////////////////////////////////////
+	//flags are assigned for every room after ego leaves it.
+	//if these aren't set, then ego has never been in the room before.
+	(define VISITED_ERANASPEACE		0)
+	(define VISITED_FOREST_11		1)
+	(define VISITED_FOREST_12		2)
+	(define VISITED_OGRE_ROOM		3)
+	(define VISITED_BEAR_CAVE		4)
+	(define VISITED_KOBOLD_CAVE		5)
+	(define VISITED_SPITTING_SPIREA	6)
+	(define VISITED_FOREST_17		7)
+	(define VISITED_FOREST_18		8)
+	(define VISITED_FOREST_19		9)
+	(define VISITED_ROOM_20			10) //unused (i.e. no Room 20)
+	(define VISITED_BABAYAGA_INTERIOR	11)
+	(define VISITED_BABAYAGA_EXTERIOR	12)
+	(define VISITED_FOREST_23		13)
+	(define VISITED_FOREST_24		14)
+	(define VISITED_FOREST_25		15)
+	(define VISITED_FOREST_26		16)
+	(define VISITED_FOREST_27		17)
+	(define VISITED_ERASMUS_OUTLOOK	18)
+	(define VISITED_ERASMUS_OUTSIDE	19)
+	(define VISITED_ERASMUS_INSIDE	20)
+	(define VISITED_ERASMUS_TOWER	21)
+	(define VISITED_WIZARDS_GAME	22) //unused (Room 32 is the Wizard's Game)
+	(define VISITED_FOREST_33		23)
+	(define VISITED_FOREST_34		24)
+	(define VISITED_FOREST_35		25)
+	(define VISITED_FOREST_36		26)
+	(define VISITED_CASTLE_GATE		27)
+	(define VISITED_CASTLE_BARRACKS	28)
+	(define VISITED_CASTLE_COURTYARD	29) //unused
+	(define VISITED_CASTLE_STABLES	30) //unused
+	(define VISITED_CASTLE_GUARDS	31)
+	(define VISITED_FOREST_42		32)
+	(define VISITED_FOREST_43		33)
+	(define VISITED_FOREST_44		34)
+	(define VISITED_GOBLIN_AMBUSH	35)
+	(define VISITED_ROOM_46			36)	//unused (deleted Goblin Cave scene)
+	(define VISITED_ROOM_47			37)	//unused (deleted Goblin Cave scene)
+	(define VISITED_ROOM_48			38)	//unused (deleted Goblin Cave scene)
+	(define VISITED_ROOM_49			39)	//unused (deleted Goblin Cave scene)
+	(define VISITED_ROOM_50			40)	//unused (deleted Goblin Cave scene)
+	(define VISITED_FOREST_51		41)
+	(define VISITED_FOREST_52		42)
+	(define VISITED_FARM			43)
+	(define VISITED_HEALERHUT_OUTSIDE	44)
+	(define VISITED_HEALERHUT_INSIDE	45)
+	(define VISITED_FOREST_56		46)
+	(define VISITED_FOREST_57		47)
+	(define VISITED_FROST_CAVE		48)
+	(define VISITED_ROOM_59			49) //unused (Room 59 does not exist)
+	(define VISITED_MEEPS			50)
+	(define VISITED_FOREST_61		51)
+	(define VISITED_FOREST_62		52)
+	(define VISITED_FOREST_63		53)
+	(define VISITED_GRAVEYARD_DAYTIME	54)
+	(define VISITED_GRAVEYARD_NIGHTTIME	114)
+	(define VISITED_TOWNOVERLOOK	55)
+	(define VISITED_PATH_66			56)
+	(define VISITED_PATH_67			57)
+	(define VISITED_PATH_68			58)
+	(define VISITED_FOREST_69		59)
+	(define VISITED_FAERYRING		60) //unused
+	(define VISITED_FOREST_71		61)
+	(define VISITED_FOREST_72		62)
+	(define VISITED_TARGETRANGE		63) //unused
+	(define VISITED_FOREST_74		64)
+	(define VISITED_FOREST_75		65)
+	(define VISITED_DRYAD			66)
+	(define VISITED_STAG_77			67)
+	(define VISITED_STAG_78			68)
+	(define VISITED_FOREST_79		69)
+	(define VISITED_FOREST_80		70)
+	(define VISITED_FOREST_81		71) //log crossroads
+	(define VISITED_FLYINGFALLS		72)
+	(define VISITED_HENRYINSIDE		73)
+	(define VISITED_ANTWERP			74)
+	(define VISITED_FOREST_85		75)
+	(define VISITED_FOREST_86		76)
+	(define VISITED_LAKE			77)
+	(define VISITED_TROLLCAVE		78)
+	(define VISITED_TROLLCAVE2		79)
+	(define VISITED_ROOM_90			80) //unused
+	(define VISITED_BRIGAND_AMBUSH	81)
+	(define VISITED_FOREST_92		82)
+	(define VISITED_BRIGAND_GATE	83)
+	(define VISITED_BRIGAND_COURTYARD	84) //wrong description... means something else.
+	(define VISITED_BRIGAND_DININGHALL	85) //unused
+	(define VISITED_BRIGAND_JESTER	86)
+	(define VISITED_BRIGAND_LEADER	87)
+	(define VISITED_TOWNOUTLOOK		88)	
+	(define VISITED_INN				89)
+	(define VISITED_OUTSIDE_MAGICSHOP	90)
+	(define VISITED_ADVENTURER_GUILD	91)
+	(define VISITED_LOL_HOUSE		92)
+	(define VISITED_MAGICSHOP_INSIDE	93)
+	(define VISITED_VEGGIE_STAND	94)
+	(define VISITED_SHERIFF_HOUSE	95)
+	(define VISITED_STORE			96)
+	(define VISITED_TAVERN_OUTSIDE	97)
+	(define VISITED_TAVERN_INSIDE	98)
+	(define VISITED_THIEVES_GUILD	99)
+	(define VISITED_ALLEY_DAY		100)
+	(define VISITED_ALLEY_NIGHT		101)
+	//102 through 110 are not defined	
+	(define HERO_NO_STAMINA				110)
+	(define SHEMA_MAKING_ORDER		111)
+	(define SHEMA_BRINGS_ORDER	112)
+	(define OBTAINED_BAR_NOTE			113)	
+	//event 114 is defined above: visited graveyard at night
+	(define ABDULLA_IS_AT_INN		115)
+	(define MET_ABDULLA					116)
+	(define TAVERN_THROWN_OUT			117)
+	(define TAVERN_DRUNK				118)
+	(define MET_SHOPKEEPER				119)
+	(define PURCHASED_FROM_DRYGOODS		120)
+	//event 121 is unused
+	(define RENTED_ROOMATINN			122)
+	(define LEARNED_THIEF_PASSWORD		123)
+	(define HERO_HUNGRY					124)
+	(define HERO_STARVING				125)
+	(define ALLEY_ROBBED				126)
+	(define SIGNED_LOGBOOK			127)
+	(define SLEPT_AT_INN			128)
+	(define SAVE_ENABLED			129)	//game saving is disabled in certain rooms, like during battles.
+	(define SEARCHED_LOL_COUCH			130)
+	(define SEARCHED_LOL_BASKET			131)
+	(define SEARCHED_LOL_PURSE			132)
+	(define STOLE_CANDLESTICKS			133)
+	(define SEARCHED_LOL_DESK			134)
+	(define UNCOVERED_BIRDCAGE			135)
+	(define OBTAINED_SPIREA_SEED		136)
+	(define SMASHED_FLOWER1				137)
+	(define SMASHED_FLOWER2				138)
+	(define SMASHED_FLOWER3				139)
+	(define PICKED_ERANA_FLOWERS		140)
+	(define LEARNED_CALM				141)
+	(define ERASMUS_WARPOUT				142)
+	(define WRONG_ANSWER			143)
+	(define SEARCHED_SHERIFF_DRAWER		144)
+	(define SEARCHED_SHERIFF_SAFE		145)
+	//event 146 is unused
+	(define OBTAINED_KOBOLD_KEY			147)
+	(define HAVE_KOBOLD_MUSHROOMS	148) 	//replaced flag 174 in 1.200
+	(define BEAR_CAVE_FIRST_ENTRY		149)	//used to trigger the inital entrance message
+	(define DEFEATED_KOBOLD				150)
+	(define KOBOLD_CHEST_UNLOCKED		151)
+	//event 152 is unused
+	(define KOBOLD_AWAKE			153)
+	(define ERASMUS_ATTACKED		154)
+	(define SAW_RED_SIGN			155)
+	(define SAW_GREEN_SIGN			156)
+	//event 157 is unused	
+	(define MANTRAY_LEFT			158)
+	(define MANTRAY_RIGHT			159)
+	(define BEAR_FRIENDLY			160)
+	(define BEAR_GONE				161)
+	//events 162-163 are unused
+	(define GHOSTS_ATTACK		164)
+	(define OBTAINED_TOADSTOOLS		165)
+	(define FIGHTING_KOBOLD		166)
+	(define MET_BEAR				167)
+	(define PROTECTED_UNGUENT	168)
+	(define DEFEATED_BEAR			169)
+	(define SAVED_BARNARD			170)
+	(define MET_BONEHEAD			171)
+	(define BABAYAGA_HUT_OPEN		172)
+	(define BABAYAGA_FLY_AWAY	173)
+	(define KOBOLD_CASTING_REVERSAL	174) //originally used for checking if player has Kobold Toadstools
+	(define KOBOLD_CHEST_SEARCHED		175)
+	(define ENTERED_FOX_ROAD_1			176)
+	(define ENTERED_FOX_ROAD_2			177)
+	//event 178 is unused
+	(define STOLE_SHERIFF_VASE		179)
+	(define MOVED_SHERIFF_VASE		180)
+	(define STOLE_SHERIFF_CANDELABRA	181)
+	(define STOLE_OTTO_MUSIC_BOX		182)
+	(define UNCOVERED_SHERIFF_SAFE	183)
+	(define CRACKED_SHERIFF_SAFE	184)
+	//event 185 is unused
+	(define DANCED_FOR_FAIRIES		186)
+	(define DANCING_FOR_FAIRIES		187)
+	(define GOT_FAIRIES_ATTENTION	188)
+	(define GOT_KARL_ATTENTION		189)
+	(define CLIMBED_SPIREA_LEDGE	190)
+	(define EXITED_TOWN			191)
+	(define SPIREA_INACTIVE		192)
+	(define OTTO_BACK_TO_BED			193)
+	(define OPEN_MUSIC_BOX			194)
+	(define OTTO_CLOSES_MUSIC_BOX	195)
+	(define SHERIFF_AWAKENED		196)
+	(define MET_DRYAD				197)
+	(define DRYAD_AGREED_HELP	198)
+	(define EXITED_TOWN_2			199)
+	//event 200 is unused
+	(define DISPEL_LEARNED_RECIPE		201)
+	(define STAG_PRESENT			202)
+	(define STAG_HURT				203)
+	(define ANTWERP_SKY			204)
+	(define HERO_OVERENCUMBERED		205)
+	(define ANTWERP_SPLIT			206)
+	(define MET_FOX				207)
+	(define OBTAINED_GEM			208)
+	(define LOOKED_IN_PTERESA_NEST	209)
+	(define OBTAINED_RING			210)
+	//event 211 is tested outside Healer's house, but is never set
+	(define PTERESA_LEFT_NEST		212)
+	(define WHACKED_BY_GIANT	213)
+	//event 214 is unused
+	(define OBTAINED_BARNARD_REWARD		215)
+	(define KOBOLD_CHEST_KNOWN		216)
+	(define STABLE_CLEAN 		217)
+	(define DISPEL_GAVE_DUST		218)
+	(define DISPEL_GAVE_FUR			219)
+	(define DISPEL_GAVE_FLOWERS	220)
+	(define DISPEL_GAVE_ACORN		221)
+	(define DISPEL_GAVE_WATER		222)
+	(define DISPEL_HEALER_MAKING_POTION	223)
+	(define OBTAINED_DISPEL_POTION		224)
+	(define MET_HEALER		225)
+	(define STOLE_HEALER_POTIONS			226) //banned from Healer's hut
+	(define OBTAINED_GREEN_FUR			227)
+	(define LEARNED_DETECT			228)
+	(define MET_STABLEMAN			229)
+	(define RETURNED_RING			230)
+	//event 231 is unused
+	(define DEFEATED_FIRST_GOBLIN	232) //"Wow! You threw that dead Goblin a long way!"
+//	(define MONSTER_HIT		233) //unsure; related to combat
+	//event 234 is unused
+	(define SPIED_THIEVES		235)
+	(define HENRY_LADDER_KNOWN 	236)
+	(define DEFEATED_MINOTAUR			237) //He's not actually dead, just unconscious
+	(define BRIGAND_GATE_OPEN		238)
+//	(define EVENT_FIGHTINGWEAPONMASTER	239) Unsure
+	(define HENRY_DEADLY_TP		240) //teleported dangerously away by henry.
+	(define HENRY_SAFE_TP			241) //teleported away safely by Henry
+	(define ASKED_TRIGGER_SCROLL		242)
+// Event 243 is related to the Weapons Master
+	(define BRIGANDS_BEHIND_LOG		244)
+	(define OBTAINED_BRUTUS_KEY			245)
+	(define LAKE_EASTER_EGG		246)
+	(define SAID_HIDEN_GOSEKE		247)
+	(define HERO_KILLED_IN_BATTLE	248)
+	(define DEFEATED_WEAPON_MASTER			249)
+	(define DEFEATED_FRED			250)
+	(define DEFEATED_FRED_89		251)
+	(define TROLL_DOOR_UNLOCKED		252)
+	(define TROLL_DOOR_OPEN			253)
+	(define HERO_SITTING			254)
+	(define ORDERED_DRINK			255)
+// Events 256-260 are related to Yorick's maze
+	(define OPENING_LEADER_DOOR		257)
+	(define PULLED_CHAIN			259)
+	(define DEFEATED_BRUTUS			261)
+	(define LEARNED_TRIGGER		262)
+	(define ERASMUS_ASKED_MAZE_GAME	266)
+	(define JESTER_NO_MORE_TALKING	267)
+	(define BEFRIENDED_JESTER	268)
+	(define CLIMBED_HENRY_CLIFF 			272)
+	(define SAVED_ELSA				273)
+	(define KNOCKED_HENRY_DOOR		275)
+	(define CLIMBED_HEALER_TREE	278)
+	(define HAVE_FAIRY_MUSHROOMS		279)
+	(define KOBOLD_CHEST_EXPLODED	282)
+	(define SLINK_WARNING			299)
+	(define SHAMEEN_SIGNALING		300)
+	(define SHEMA_ASKS_ORDER		301)
+	(define EATEN_AT_INN			302)
+	(define MET_GREEN_MEEP			305)
+	(define TALKED_BEAR			312)
+	(define OFFERED_TRAINING		321)
+	(define BABAYAGA_FROG			325)
+	(define BABAYAGA_CURSE		326)
+	(define ATE_FAIRY_MUSHROOMS		327)
+	(define PLAYING_GAME		328) //This flag is set when we're in the game proper.
+	(define HAVE_FLYING_WATER		329)
+	(define HAVE_LAKE_WATER			330)
+	(define DEFEATED_OGRE			331)
+	(define OPENED_OGRE_CHEST		332)
+	(define SEARCHED_OGRE_CHEST		333)
+	(define DISPEL_HEALER_KNOWS_RECIPE	334)
+	(define SEARCHED_FRED_TREASURE		335)
+	(define GAVE_GEM_BONEHEAD			336)
+	(define GIVE_UP_MAZE_GAME		337)
+	(define GAVE_HERMIT_RATION		338) //Can sleep at the Hermit's cave with this flag set
+	(define SHAVED_FRED				340)
+	(define GENEROUS_TO_ABDULLA		347)
+	(define OGRE_GONE				341) //Ogre disappears day after his death
+	(define HENRY_DOOR_OPEN			352)
+	(define ERASMUS_KNOWS_HERO_HAS_MAGIC		353)
+	(define MET_GARGOYLE			354)
+	(define READ_BARNARD_BULLETIN	355)
+
+/////////////////////////////////////////////////////////
+//Puzzle Point Event Flags (142 flags allocated; 6 flags unused: 609, 692, 710, 712, 714, 716)
+/////////////////////////////////////////////////////////
+	
+	(define POINTS_KILLBEAR 		601) //-25 points
+	(define POINTS_KILLKOBOLD 		602) //10 points (Fighter or Magic User only)
+	(define POINTS_SMASHSPIREA 		603) //-10 points
+	(define POINTS_KILLFOX 			604) //-10 points
+	(define POINTS_GOTDRUNK 		605) //-5 points
+	//events 606 to 644 are character specific points, listed at bottom.
+	
+	(define POINTS_EATERANAFRUIT 	645) //2 points
+	(define POINTS_CALMBEAR 		646) //5 points
+	(define POINTS_FREEBEAR 		647) //25 points
+	(define POINTS_ENTERKOBOLDCAVE 	648) //2 points
+	(define POINTS_TAKEKOBOLDKEY 	649) //7 points
+	(define POINTS_TAKEKOBOLDMONEY 	650) //5 points
+	(define POINTS_GETSEED 			651) //8 points
+	(define POINTS_ENTERBABAYAGAHUT 652) //2 points
+	(define POINTS_TURNBABAYAGAINTOFROG	653) //50 points
+	(define POINTS_GIVEMANDRAKEROOT 654) //3 points
+	(define POINTS_MAKEDEALWITHSKULL 	655) //2 points
+	(define POINTS_GIVEGEM 			656) //10 points
+	(define POINTS_HUTSIT 			657) // 7 points
+	(define POINTS_ENTERERASMUSCASTLE 	658) //3 points
+	(define POINTS_TALKTOERASMUS 	659) //1 point
+	(define POINTS_ENTERCASTLECOURTYARD 	660) //1 point
+	(define POINTS_TALKTOWEAPONMASTER 	661) //1 point
+	(define POINTS_WORKINSTABLES 	662) //5 points
+	(define POINTS_MEETBARON 		663) //10 points
+	(define POINTS_TALKTOBARON 		664) //3 points
+	(define POINTS_TALKTOFARMER 	665) //1 points
+	(define POINTS_TALKTOFARMERABOUTLEADER 666) //3 points
+	(define POINTS_GETGOLDRING 		667) //3 points
+	(define POINTS_TALKTOHEALER 	668) //2 points
+	(define POINTS_RETURNRING 		669) //10 points
+	(define POINTS_SELLMUSHROOM 	670) //1 point
+	(define POINTS_SELLCHEETAURCLAW 671) //2 points
+	(define POINTS_SELLTROLLBEARD 	672) //2 points
+	(define POINTS_SELLFLOWERS 		673) //1 points
+	(define POINTS_GIVEFLYINGWATER 	674) //2 points
+	(define POINTS_GIVEMAGICACORN 	675) //5 points
+	(define POINTS_GIVEGREENFUR 	676) //2 points
+	(define POINTS_GIVEFAIRYDUST 	677) //2 points
+	(define POINTS_GETDISPELPOTION 	678) //7 points
+	(define POINTS_GETGLOWINGGEM 	679) //8 points
+	(define POINTS_TALKTOMEEP 		680) //1 point
+	(define POINTS_GETGREENFUR 		681) //5 points
+	(define POINTS_USEUNDEADUNGUENT	682) //2 points
+	(define POINTS_GETMANDRAKEROOT 	683) //6 points
+	(define POINTS_LEAVETOWNFIRSTTIME 	684) //1 point
+	(define POINTS_RECEIVEBADADVICEFROMBRUNO 	685) //2 points
+	(define POINTS_FREEFOX 			686) //10 points
+	(define POINTS_TALKTOFAIRIES	 	687) //1 point
+	(define POINTS_DANCEWITHFAIRIES 	688) //3 points
+	(define POINTS_GETFAIRYDUST 	689) //8 points
+	(define POINTS_PICKMUSHROOMS 	690) //3 points
+	(define POINTS_OVERHEARBRUNO 	691) //12 points
+	//no event 692
+	(define POINTS_AGREETOHELPDRYAD	693) //1 point
+	(define POINTS_GIVESEED 		694) //7 points
+	(define POINTS_GETACORN 		695) //1 point
+	(define POINTS_EATACORN 		696) //-5 points
+	(define POINTS_KNOCKONHERMITDOOR 	697) //1 point
+	(define POINTS_GETFLYINGWATER 	698) //3 points
+	(define POINTS_MEETHERMIT 		699) //5 points
+	(define POINTS_TALKTOHERMIT 	700) //2 points
+	(define POINTS_FINDSECRETENTRANCE 	701) //10 points
+	(define POINTS_GIVECAVEPASSWORD 	702) //5 points
+	(define POINTS_VISITLAKE 		703) //1 point
+	(define POINTS_ENTERSECRETENTRANCE 	704) //2 points
+	(define POINTS_ENTERBRIGANDFORTRESS	705) //8 points
+	(define POINTS_ENTERBRIGANDDININGROOM 	706) //8 points
+	(define POINTS_ENTERBRIGANDJESTERROOM 	707) //8 points
+	(define POINTS_TALKTOJESTER 	708) //2 points
+	(define POINTS_TALKTOJESTERABOUTELSA 	709) //8 points
+	//no event 710
+	(define POINTS_ENTERBRIGANDLEADERROOM 	711) //12 points
+	//no event 712
+	(define POINTS_DISPELBRIGANDLEADER 		713) //35 points
+	//no event 714
+	(define POINTS_TAKEMAGICMIRROR 	715) //10 points
+	//no event 716
+	(define POINTS_BEGINGAME 		717) //1 point
+	(define POINTS_TALKTOSHERIFF 	718) //1 point
+	(define POINTS_TALKTOSHAMEEN 	719) //1 point
+	(define POINTS_TALKTOABDULA 	720) //5 points
+	(define POINTS_EATKATTAFOOD 	721) //1 point
+	(define POINTS_RENTROOM 		722) //1 point
+	(define POINTS_READLOGBOOK 		723) //4 points
+	(define POINTS_SIGNLOGBOOK 		724) //1 point
+	(define POINTS_TALKTOGUILDMASTER 	725) //1 point
+	(define POINTS_READNOTICEBOARD 	726) //6 points
+	(define POINTS_TALKTOZARA 		727) //1 point
+	(define POINTS_BUYAPPLES 		728) //3 points
+	(define POINTS_TALKTOCENTAURGIRL 	729) //1 point
+	(define POINTS_TALKTOSHOPKEEPER 	730) //1 point
+	(define POINTS_PICKUPNOTE 		731) //2 points
+	(define POINTS_TALKTOBEGGAR 	732) //1 point
+	(define POINTS_GIVEALMS 		733) //1 point
+	(define POINTS_WINGAME 			734) //25 points
+	(define POINTS_TALKTOGATEKEEPER 	735) //5 points
+	(define POINTS_GIVEABDULAFOOD 	736) //2 points
+
+
+	//FIGHTER ONLY POINTS
+	(define POINTS_FIGHTWEAPONMASTER 	607) //3 points (Fighter only)
+	(define POINTS_DEFEATWEAPONMASTER 	608) //10 points (Fighter only)
+	//no event 609
+	(define POINTS_BUYCHAINMAIL 	610) //3 points (Fighter only)
+	(define POINTS_KILLTROLL 		611) //4 points (Fighter only)
+	(define POINTS_KILLCHEETAUR 	612) //4 points (Fighter Only)
+	(define POINTS_KILLSAURUSREX 	613) //4 points (Fighter Only)
+	(define POINTS_KILLMINOTAUR 	737) //5 points (Fighter only)
+	(define POINTS_KILLMANTRAY 		738) //2 points (Fighter only)
+	(define POINTS_KILLOGRE 		739) //2 points (Fighter only)
+	(define POINTS_KILLBRIGAND 		740) //1 point (Fighter Only)
+	(define POINTS_KILLSAURUS 		741) //1 point (Figher only)
+	(define POINTS_KILLGOBLIN 		742) //1 point (Fighter Only)
+	
+	//THIEF ONLY POINTS
+	(define POINTS_GETROBBED 		606) //-10 points (Thief only)
+	(define POINTS_ENTERLOLHOUSE 	623) //5 points (Thief Only)
+	(define POINTS_SEARCHLOLDESK 	624) //1 point (Thief Only)
+	(define POINTS_SEARCHLOLCOUCH 	625) //1 point (Thief Only)
+	(define POINTS_SEARCHLOLPURSE 	626) //1 point (Thief Only)
+	(define POINTS_SEARCHLOLBASKET 	627) //1 point (Thief Only)
+	(define POINTS_TAKECANDLESTICKS 	628) //1 point (Thief Only)
+	(define POINTS_PETLOLCAT 		629) //3 points (Thief Only)
+	(define POINTS_ENTERSHERIFFHOUSE 	630) //5 points (Thief only)
+	(define POINTS_SEARCHSHERIFFDRAWER 	631) //1 point (Thief only)
+	(define POINTS_MOVEPAINTING 	632) //1 point (Thief only)
+	(define POINTS_CRACKSAFE 		633) //1 point (Thief only)
+	(define POINTS_TAKESHERIFFBAG 	634) //1 point (Thier only)
+	(define POINTS_TAKEVASE 		635) //1 point (Thief only)
+	(define POINTS_TAKECANDELABRA 	636) //1 point (Thief only)
+	(define POINTS_TAKEMUSICBOX 	637) //1 point (Thief only]
+	(define POINTS_ENTERTHIEVESGUILD 	638) //5 points (Thief Only)
+	(define POINTS_BUYTHIEFLICENSE 	639) //3 points (Thief Only)
+	(define POINTS_BUYTHIEFTOOLKIT 	640) //3 points (Thief Only)
+	(define POINTS_FENCEGOODS 		641) //3 points (Thief only)
+	(define POINTS_SHOWTHIEFSIGN 	642) //3 points (Thief only)
+	(define POINTS_PLAYDAGNABIT 	643) //3 points (Thief Only)
+	(define POINTS_WINDAGNABITSMALL 	644) //5 points (Thief Only)
+	
+	//MAGE ONLY POINTS
+	(define POINTS_LEARNCALM 		614) //4 points (Mage only)
+	(define POINTS_SLEEPERANA 		615) //5 points (Mage only)
+	(define POINTS_PLAYWIZARDGAME 	616) //5 points (Mage only)
+	(define POINTS_WINWIZARDGAME 	617) //12 points (Mage only)
+	(define POINTS_LEARNDETECTMAGIC 	618) //4 points (Mage only)
+	(define POINTS_LEARNTRIGGER 	619) //4 points (Mage only)
+	(define POINTS_LEARNFETCH 		620) //2 points (Mage only)
+	(define POINTS_LEARNOPEN 		621) //2 points (Mage only)
+	(define POINTS_LEARNFLAMEDART 	622) //2 points (Mage only)
+	
+/////////////////////////////////////////////////////////
+//Monster Arenas
+/////////////////////////////////////////////////////////
+
+	(define MONSTER_KOBOLD		15)
+	(define MONSTER_BEAR		420)
+	(define MONSTER_MINOTAUR	425)
+	(define MONSTER_SAURUS		430)
+	(define MONSTER_MANTRAY		435)
+	(define MONSTER_CHEETAUR	440)
+	(define MONSTER_GOBLIN		445)
+	(define MONSTER_TROLL		450)
+	(define MONSTER_OGRE		455)
+	(define MONSTER_SAURUSREX	460)
+	(define MONSTER_BRIGAND		465)
